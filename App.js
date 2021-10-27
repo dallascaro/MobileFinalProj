@@ -19,7 +19,7 @@ function HomeScreen({navigation}){
   return(
     <View>
       <Text>Welcome to the Home Screen</Text>
-      <Text>Please either Login into you account or create an acount </Text>
+      <Text>Please either Login into you account or create an account </Text>
     <View>
 
     <TextInput 
@@ -33,14 +33,15 @@ function HomeScreen({navigation}){
       value = {password}>
       </TextInput>
 
-      <Button
-        title = "Login to Account"
-        onPress={() => navigation.navigate('Login')}>
-        </Button>
-        <Button
-        title = "Create an Account"
+      <Button style={styles.button}
+        title = "Sign Up!"
         onPress={() => navigation.navigate('Create')}>
         </Button>
+        <Button style={styles.button}
+        title = "Login In"
+        onPress={() => navigation.navigate('Account')}>
+        </Button>
+
     </View>
       
       <StatusBar style="auto" />
@@ -50,37 +51,28 @@ function HomeScreen({navigation}){
 }
 
 function SearchScreen({navigation}){
-  const{text, onChangeText} = React.useState("Placeholder");
   return(
     <View>
-      <Text>Welcome to the Search Screen</Text>
+      <Text>Please select a movie from the list you would like to leave a review for!</Text>
       
       <View>
-        <View>
-        <SafeAreaView>
-        <TextInput
-            onChangeText = {onChangeText}
-            value = {text}
-            placeholder = "Enter text"/>
-       </SafeAreaView>
-        </View>
     
        <View>
         <ScrollView horizontal = {true}> 
 
-        <TouchableHighlight onPress={() =>  navigation.navigate('Movies')}>
+        <TouchableHighlight onPress={() =>  navigation.navigate('DUNE')}>
         <Image style={styles.tinyLogo ,styles.row, styles.text} source={require('./assets/MoviePosters/Movie1.png')}/>
         </TouchableHighlight>
 
-        <TouchableHighlight onPress={() =>  navigation.navigate('Movies')}>
+        <TouchableHighlight onPress={() =>  navigation.navigate('NIGHT TEETH')}>
             <Image style={styles.tinyLogo ,styles.row, styles.text} source={require('./assets/MoviePosters/Movie2.png')}/>
             </TouchableHighlight>
 
-            <TouchableHighlight onPress={() =>  navigation.navigate('Movies')}>
+            <TouchableHighlight onPress={() =>  navigation.navigate('FREE GUY')}>
             <Image style={styles.tinyLogo ,styles.row, styles.text} source={require('./assets/MoviePosters/Movie3.png')}/>
             </TouchableHighlight>
 
-            <TouchableHighlight onPress={() =>  navigation.navigate('Movies')}>
+            <TouchableHighlight onPress={() =>  navigation.navigate('OLD')}>
             <Image style={styles.tinyLogo ,styles.row, styles.text} source={require('./assets/MoviePosters/Movie4.png')}/>
             </TouchableHighlight>
 
@@ -88,7 +80,7 @@ function SearchScreen({navigation}){
           <Image style={styles.tinyLogo ,styles.row, styles.text} source={require('./assets/MoviePosters/Movie11.png')}/>
           </TouchableHighlight>
 
-          <TouchableHighlight onPress={() =>  navigation.navigate('Movies')}>
+          <TouchableHighlight onPress={() =>  navigation.navigate('KINGS MAN')}>
             <Image style={styles.tinyLogo ,styles.row, styles.text} source={require('./assets/MoviePosters/Movie12.png')}/>
             </TouchableHighlight>
 
@@ -97,11 +89,11 @@ function SearchScreen({navigation}){
 
         <View>
         <ScrollView horizontal = {true}> 
-        <TouchableHighlight onPress={() =>  navigation.navigate('Movies')}>
+        <TouchableHighlight onPress={() =>  navigation.navigate('EVERY LAST ONE OF THEM')}>
         <Image style={styles.tinyLogo ,styles.row, styles.text} source={require('./assets/MoviePosters/Movie5.png')}/>
           </TouchableHighlight>
 
-          <TouchableHighlight onPress={() =>  navigation.navigate('Movies')}>
+          <TouchableHighlight onPress={() =>  navigation.navigate('BLACK WIDOW')}>
           <Image style={styles.tinyLogo ,styles.row, styles.text} source={require('./assets/MoviePosters/Movie6.png')}/>
           </TouchableHighlight>
 
@@ -109,15 +101,15 @@ function SearchScreen({navigation}){
           <Image style={styles.tinyLogo ,styles.row, styles.text} source={require('./assets/MoviePosters/Movie7.png')}/>
           </TouchableHighlight>
 
-           <TouchableHighlight onPress={() =>  navigation.navigate('Movies')}>
+           <TouchableHighlight onPress={() =>  navigation.navigate('JURRASIC WORLD')}>
             <Image style={styles.tinyLogo ,styles.row, styles.text} source={require('./assets/MoviePosters/Movie8.png')}/>
             </TouchableHighlight>    
 
-            <TouchableHighlight onPress={() =>  navigation.navigate('Movies')}>
+            <TouchableHighlight onPress={() =>  navigation.navigate('SPIDEMAN NO WAY HOME')}>
         <Image style={styles.tinyLogo ,styles.row, styles.text} source={require('./assets/MoviePosters/Movie9.png')}/>
           </TouchableHighlight>
 
-          <TouchableHighlight onPress={() =>  navigation.navigate('Movies')} >
+          <TouchableHighlight onPress={() =>  navigation.navigate('MATRIX')} >
           <Image style={styles.tinyLogo ,styles.row, styles.text} source={require('./assets/MoviePosters/Movie10.png')}/>
           </TouchableHighlight>
 
@@ -126,27 +118,27 @@ function SearchScreen({navigation}){
 
         <View>
         <ScrollView horizontal = {true}> 
-        <TouchableHighlight onPress={() =>  navigation.navigate('Movies')}>
+        <TouchableHighlight onPress={() =>  navigation.navigate('SPIDERMAN NO WAY HOME')}>
         <Image style={styles.tinyLogo ,styles.row, styles.text} source={require('./assets/MoviePosters/Movie9.png')}/>
           </TouchableHighlight>
 
-          <TouchableHighlight onPress={() =>  navigation.navigate('Movies')} >
+          <TouchableHighlight onPress={() =>  navigation.navigate('MATRIX')} >
           <Image style={styles.tinyLogo ,styles.row, styles.text} source={require('./assets/MoviePosters/Movie10.png')}/>
           </TouchableHighlight>
 
-          <TouchableHighlight onPress={() =>  navigation.navigate('Movies')}>
+          <TouchableHighlight onPress={() =>  navigation.navigate('RESIDENT EVIL')}>
           <Image style={styles.tinyLogo ,styles.row, styles.text} source={require('./assets/MoviePosters/Movie11.png')}/>
           </TouchableHighlight>
 
-          <TouchableHighlight onPress={() =>  navigation.navigate('Movies')}>
+          <TouchableHighlight onPress={() =>  navigation.navigate('KINGS MAN')}>
             <Image style={styles.tinyLogo ,styles.row, styles.text} source={require('./assets/MoviePosters/Movie12.png')}/>
             </TouchableHighlight>
 
-            <TouchableHighlight onPress={() =>  navigation.navigate('Movies')}>
+            <TouchableHighlight onPress={() =>  navigation.navigate('SUNC')}>
         <Image style={styles.tinyLogo ,styles.row, styles.text} source={require('./assets/MoviePosters/Movie1.png')}/>
         </TouchableHighlight>
 
-        <TouchableHighlight onPress={() =>  navigation.navigate('Movies')}>
+        <TouchableHighlight onPress={() =>  navigation.navigate('NIGHT TEETH')}>
             <Image style={styles.tinyLogo ,styles.row, styles.text} source={require('./assets/MoviePosters/Movie2.png')}/>
             </TouchableHighlight>
 
@@ -157,7 +149,7 @@ function SearchScreen({navigation}){
       <StatusBar style="auto" />
 
       <View> 
-        <Button
+        <Button style={styles.button}
         title = "Go to home Screen"
         onPress={() => navigation.navigate('Home')}>
         </Button>
@@ -174,7 +166,7 @@ function CreateScreen({navigation}){
   const{password, onChangeText2} = React.useState("Placeholder");
   return(
     <View>
-      <Text>Welcome to the Create Screen</Text>
+      <Text>Please Create an Account using a username and password!</Text>
 
       <SafeAreaView>
       <TextInput 
@@ -189,9 +181,9 @@ function CreateScreen({navigation}){
       </TextInput>
        </SafeAreaView>
 
-       <Button
-          title = "Login to Account"
-          onPress={() =>  navigation.navigate('Login')}>
+       <Button style={styles.button}
+          title = "Create Account"
+          onPress={() =>  navigation.navigate('Account')}>
         </Button>
       <StatusBar style="auto" />
       
@@ -201,34 +193,24 @@ function CreateScreen({navigation}){
 
 }
 
-function LoginScreen({navigation}){
-  const{userName, onChangeText} = React.useState("Placeholder");
-  const{password, onChangeText2} = React.useState("Placeholder");
+
+function accountScreen({navigation}){
   return(
     <View>
-      <Text>Welcome to the Login Screen</Text>
-      
-      <SafeAreaView>
-      <TextInput 
-        placeholder = "Username: "
-        onChangeText = {onChangeText}
-        value = {userName}>
-      </TextInput>
-      <TextInput 
-        placeholder = "Password: "
-        onChangeText = {onChangeText2}
-        value = {password}>
-      </TextInput>
-       </SafeAreaView>
+      <Text>Welcome to your Account</Text>
 
-       <Button
-          title = "Login to Account"
+        <Button style={styles.button}
+          title = "Selecte Movies To Review"
+          onPress={() =>  navigation.navigate('Search')}>
+        </Button>
+        <Button style={styles.button}
+          title = "Movies Reviewed"
           onPress={() =>  navigation.navigate('Search')}>
         </Button>
       <StatusBar style="auto" />
 
       <View> 
-        <Button
+        <Button style={styles.button}
           title = "Go to home Screen"
           onPress={() => navigation.navigate('Home')}>
         </Button>
@@ -240,39 +222,194 @@ function LoginScreen({navigation}){
 
 }
 
+function LoginScreen({navigation}){
+  const{userName, onChangeText} = React.useState("Placeholder");
+  const{password, onChangeText2} = React.useState("Placeholder");
+  return(
+    <View>
+      <Text>Please Login to your account</Text>
+
+      <SafeAreaView>
+      <TextInput 
+        placeholder = "Username: "
+        onChangeText = {onChangeText}
+        value = {userName}>
+      </TextInput>
+      <TextInput 
+        placeholder = "Password: "
+        onChangeText = {onChangeText2}
+        value = {password}>
+      </TextInput>
+       </SafeAreaView>
+
+       <Button style={styles.button}
+          title = "Login to Account"
+          onPress={() =>  navigation.navigate('Login')}>
+        </Button>
+      <StatusBar style="auto" />
+      
+    </View>
+
+  );
+
+}
+
 function movieScreen(){
-  const [isLoading, setLoading] = useState(true);
-  const [data, setData] = useState([]);
 
-  const getMovies = async () => {
-     try {
-      const response = await fetch('https://reactnative.dev/movies.json');
-      const json = await response.json();
-      setData(json.movies);
-    } catch (error) {
-      console.error(error);
-    } finally {
-      setLoading(false);
-    }
-  }
-
-  useEffect(() => {
-    getMovies();
-  }, []);
+  const{userName, onChangeText} = React.useState("Placeholder");
+  const{password, onChangeText2} = React.useState("Placeholder");
+  const{review, onChangeText3} = React.useState("Placeholder");
 
   return (
-    <View style={{ flex: 1, padding: 24 }}>
-      {isLoading ? <ActivityIndicator/> : (
-        <FlatList
-          data={data}
-          keyExtractor={({ id }, index) => id}
-          renderItem={({ item }) => (
-            <Text>{item.title}, {item.releaseYear}</Text>
-          )}
-        />
-      )}
+    <View>
       <View>
-      <Image style={styles.Logo} source={require('./assets/MoviePosters/freeGuy.jpg')}/>
+      <Image style={styles.tinyLogo} source={require('./assets/MoviePosters/Movie1.png')}/>
+      <Text>DUNE </Text>
+      <Text>Release Date: 2021</Text>
+      <Text>Genre: Sci-fi / Adventure  Runtime: 2HR 35 Min</Text>
+      <TextInput 
+      placeholder = "Username: "
+      onChangeText = {onChangeText}
+      value = {userName}>
+      </TextInput>
+      <TextInput 
+      placeholder = "Password: "
+      onChangeText = {onChangeText2}
+      value = {password}>
+      </TextInput>
+      <TextInput 
+      placeholder = "Review: "
+      onChangeText = {onChangeText3}
+      value = {review}
+      editable maxLength = {100}>
+      </TextInput>
+
+      <Button style={styles.button}
+        title = "Enter Review!"
+        onPress={() => navigation.navigate('Create')}>
+        </Button>
+      </View>
+    </View>
+  );
+}
+
+function movieOneScreen(){
+
+  const{userName, onChangeText} = React.useState("Placeholder");
+  const{password, onChangeText2} = React.useState("Placeholder");
+  const{review, onChangeText3} = React.useState("Placeholder");
+
+  return (
+    <View >
+      <View>
+      <Image style={styles.tinyLogo} source={require('./assets/MoviePosters/Movie2.png')}/>
+      </View>
+      <Text>NIGHT TEETH </Text>
+      <Text>Release Date: 2021  </Text>
+      <Text>Genre: Action / Crime / Drama  Runtime: 1HR 47 Min</Text>
+
+      <TextInput 
+      placeholder = "Username: "
+      onChangeText = {onChangeText}
+      value = {userName}>
+      </TextInput>
+      <TextInput 
+      placeholder = "Password: "
+      onChangeText = {onChangeText2}
+      value = {password}>
+      </TextInput>
+      <TextInput 
+      placeholder = "Review: "
+      onChangeText = {onChangeText3}
+      value = {review}
+      editable maxLength = {100}>
+      </TextInput>
+
+      <Button style={styles.button}
+        title = "Enter Review!"
+        onPress={() => navigation.navigate('Create')}>
+        </Button>
+        
+
+    </View>
+  );
+}
+
+function movieTwoScreen(){
+  const{userName, onChangeText} = React.useState("Placeholder");
+  const{password, onChangeText2} = React.useState("Placeholder");
+  const{review, onChangeText3} = React.useState("Placeholder");
+
+  return (
+    <View>
+      <View>
+      <Image style={styles.tinyLogo} source={require('./assets/MoviePosters/Movie3.png')}/>
+      <Text>FREE GUY </Text>
+      <Text>Release Date: 2021  </Text>
+      <Text>Genre: Action / Adventure  Runtime: 1HR 55 Min</Text>
+
+      <TextInput 
+      placeholder = "Username: "
+      onChangeText = {onChangeText}
+      value = {userName}>
+      </TextInput>
+      <TextInput 
+      placeholder = "Password: "
+      onChangeText = {onChangeText2}
+      value = {password}>
+      </TextInput>
+      <TextInput 
+      placeholder = "Review: "
+      onChangeText = {onChangeText3}
+      value = {review}
+      editable maxLength = {100}>
+      </TextInput>
+
+      <Button style={styles.button}
+        title = "Enter Review!"
+        onPress={() => navigation.navigate('Create')}>
+        </Button>
+
+      </View>
+    </View>
+  );
+}
+
+function movieThreeScreen(){
+  const{userName, onChangeText} = React.useState("Placeholder");
+  const{password, onChangeText2} = React.useState("Placeholder");
+  const{review, onChangeText3} = React.useState("Placeholder");
+  
+  return (
+    <View>
+      <View>
+      <Image style={styles.tinyLogo} source={require('./assets/MoviePosters/Movie4.png')}/>
+      <Text>OLD </Text>
+      <Text>Release Date: 2021 </Text>
+      <Text>Genre: Action / Adventure  Runtime: 1HR 55 Min</Text>
+
+      <TextInput 
+      placeholder = "Username for Review: "
+      onChangeText = {onChangeText}
+      value = {userName}>
+      </TextInput>
+      <TextInput 
+      placeholder = "Password: "
+      onChangeText = {onChangeText2}
+      value = {password}>
+      </TextInput>
+      <TextInput 
+      placeholder = "Reivew: "
+      onChangeText = {onChangeText3}
+      value = {review}
+      editable maxLength = {100}>
+      </TextInput>
+
+      <Button style={styles.button}
+        title = "Enter Review!"
+        onPress={() => navigation.navigate('Create')}>
+        </Button>
+
       </View>
     </View>
   );
@@ -285,8 +422,12 @@ function App() {
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="Create" component={CreateScreen} />
       <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Screen name="Account" component={accountScreen} />
       <Stack.Screen name="Search" component={SearchScreen} />
-      <Stack.Screen name="Movies" component={movieScreen} />
+      <Stack.Screen name="DUNE" component={movieScreen} />
+      <Stack.Screen name="NIGHT TEETH" component={movieOneScreen} />
+      <Stack.Screen name="FREE GUY" component={movieTwoScreen} />
+      <Stack.Screen name="OLD" component={movieThreeScreen} />
     </Stack.Navigator>
   </NavigationContainer>
   );
@@ -311,20 +452,21 @@ const styles = StyleSheet.create({
     paddingBottom: 20
   },
   tinyLogo: {
-    width: '30%',
-    height: '80%',
+    width: 200,
+    height: 300,
     paddingBottom: 20,
   },
   Logo: {
-    width: 400,
-    height: 500,
+    width: 100,
+    height: 200,
   },
   text: {
     padding: 50,
-    paddingRight: 50,
-    backgroundColor: 'black',
-    fontSize: 20,
-    color: 'white',
+    paddingRight: 50
   }, 
+  button :{
+    width: 20,
+    backgroundColor: "yellow"
+  }
 });
 
