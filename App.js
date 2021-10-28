@@ -6,18 +6,23 @@ import {ActivityIndicator, StyleSheet, Text, TextInput, View, SafeAreaView,
 import { SearchBar } from 'react-native-elements';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import movieData from './movieData.json';
 
 
 const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 
 function HomeScreen({navigation}){
 
   const{userName, onChangeText} = React.useState("Placeholder");
   const{password, onChangeText2} = React.useState("Placeholder");
   
+  
   return(
-    <View>
+    <View backgroundColor = "C4C4C4">
+
+    <View styles =  {styles.container} backgroundColor = "C4C4C4">
       <Text>Welcome to the Home Screen</Text>
       <Text>Please either Login into you account or create an account </Text>
     <View>
@@ -35,11 +40,13 @@ function HomeScreen({navigation}){
 
       <Button style={styles.button}
         title = "Sign Up!"
-        onPress={() => navigation.navigate('Create')}>
+        onPress={() => navigation.navigate('Create')}
+        color='#F8C460'>
         </Button>
         <Button style={styles.button}
         title = "Login In"
-        onPress={() => navigation.navigate('Account')}>
+        onPress={() => navigation.navigate('Account')}
+        color='#F8C460'>
         </Button>
 
     </View>
@@ -47,13 +54,14 @@ function HomeScreen({navigation}){
       <StatusBar style="auto" />
      
     </View>
+    </View>
   );
 }
 
 function SearchScreen({navigation}){
   return(
-    <View>
-      <Text>Please select a movie from the list you would like to leave a review for!</Text>
+    <View styles =  {styles.container}>
+      <Text style = {styles.titleLogo}>Flicknatic Movies</Text>
       
       <View>
     
@@ -151,7 +159,8 @@ function SearchScreen({navigation}){
       <View> 
         <Button style={styles.button}
         title = "Go to home Screen"
-        onPress={() => navigation.navigate('Home')}>
+        onPress={() => navigation.navigate('Home')}
+        color='#F8C460'>
         </Button>
       </View>
 
@@ -165,7 +174,7 @@ function CreateScreen({navigation}){
   const{userName, onChangeText} = React.useState("Placeholder");
   const{password, onChangeText2} = React.useState("Placeholder");
   return(
-    <View>
+    <View styles =  {styles.container}>
       <Text>Please Create an Account using a username and password!</Text>
 
       <SafeAreaView>
@@ -183,7 +192,8 @@ function CreateScreen({navigation}){
 
        <Button style={styles.button}
           title = "Create Account"
-          onPress={() =>  navigation.navigate('Account')}>
+          onPress={() =>  navigation.navigate('Account')}
+          color='#F8C460'>
         </Button>
       <StatusBar style="auto" />
       
@@ -196,23 +206,26 @@ function CreateScreen({navigation}){
 
 function accountScreen({navigation}){
   return(
-    <View>
+    <View styles =  {styles.container}>
       <Text>Welcome to your Account</Text>
 
         <Button style={styles.button}
           title = "Selecte Movies To Review"
-          onPress={() =>  navigation.navigate('Search')}>
+          onPress={() =>  navigation.navigate('Search')}
+          color='#F8C460'>
         </Button>
         <Button style={styles.button}
           title = "Movies Reviewed"
-          onPress={() =>  navigation.navigate('Search')}>
+          onPress={() =>  navigation.navigate('Search')}
+          color='#F8C460'>
         </Button>
       <StatusBar style="auto" />
 
       <View> 
         <Button style={styles.button}
           title = "Go to home Screen"
-          onPress={() => navigation.navigate('Home')}>
+          onPress={() => navigation.navigate('Home')}
+          color='#F8C460'>
         </Button>
       </View>
 
@@ -226,7 +239,7 @@ function LoginScreen({navigation}){
   const{userName, onChangeText} = React.useState("Placeholder");
   const{password, onChangeText2} = React.useState("Placeholder");
   return(
-    <View>
+    <View styles =  {styles.container}>
       <Text>Please Login to your account</Text>
 
       <SafeAreaView>
@@ -244,7 +257,8 @@ function LoginScreen({navigation}){
 
        <Button style={styles.button}
           title = "Login to Account"
-          onPress={() =>  navigation.navigate('Login')}>
+          onPress={() =>  navigation.navigate('Login')}
+          color='#F8C460'>
         </Button>
       <StatusBar style="auto" />
       
@@ -261,7 +275,7 @@ function movieScreen(){
   const{review, onChangeText3} = React.useState("Placeholder");
 
   return (
-    <View>
+    <View styles =  {styles.container}>
       <View>
       <Image style={styles.tinyLogo} source={require('./assets/MoviePosters/Movie1.png')}/>
       <Text>DUNE </Text>
@@ -286,7 +300,8 @@ function movieScreen(){
 
       <Button style={styles.button}
         title = "Enter Review!"
-        onPress={() => navigation.navigate('Create')}>
+        onPress={() => navigation.navigate('Create')}
+        color='#F8C460'>
         </Button>
       </View>
     </View>
@@ -300,7 +315,7 @@ function movieOneScreen(){
   const{review, onChangeText3} = React.useState("Placeholder");
 
   return (
-    <View >
+    <View styles =  {styles.container}>
       <View>
       <Image style={styles.tinyLogo} source={require('./assets/MoviePosters/Movie2.png')}/>
       </View>
@@ -327,7 +342,8 @@ function movieOneScreen(){
 
       <Button style={styles.button}
         title = "Enter Review!"
-        onPress={() => navigation.navigate('Create')}>
+        onPress={() => navigation.navigate('Create')}
+        color='#F8C460'>
         </Button>
         
 
@@ -341,7 +357,7 @@ function movieTwoScreen(){
   const{review, onChangeText3} = React.useState("Placeholder");
 
   return (
-    <View>
+    <View styles =  {styles.container}>
       <View>
       <Image style={styles.tinyLogo} source={require('./assets/MoviePosters/Movie3.png')}/>
       <Text>FREE GUY </Text>
@@ -367,7 +383,8 @@ function movieTwoScreen(){
 
       <Button style={styles.button}
         title = "Enter Review!"
-        onPress={() => navigation.navigate('Create')}>
+        onPress={() => navigation.navigate('Create')}
+        color='#F8C460'>
         </Button>
 
       </View>
@@ -381,7 +398,7 @@ function movieThreeScreen(){
   const{review, onChangeText3} = React.useState("Placeholder");
   
   return (
-    <View>
+    <View styles =  {styles.container}>
       <View>
       <Image style={styles.tinyLogo} source={require('./assets/MoviePosters/Movie4.png')}/>
       <Text>OLD </Text>
@@ -407,7 +424,8 @@ function movieThreeScreen(){
 
       <Button style={styles.button}
         title = "Enter Review!"
-        onPress={() => navigation.navigate('Create')}>
+        onPress={() => navigation.navigate('Create')}
+        color='#F8C460'>
         </Button>
 
       </View>
@@ -432,13 +450,29 @@ function App() {
   </NavigationContainer>
   );
 }
-
+/*
+function App() {
+  return (
+    <Tab.Navigator initialRouteName="Home">
+      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Create" component={CreateScreen} />
+      <Tab.Screen name="Login" component={LoginScreen} />
+      <Tab.Screen name="Account" component={accountScreen} />
+      <Tab.Screen name="Search" component={SearchScreen} />
+      <Tab.Screen name="DUNE" component={movieScreen} />
+      <Tab.Screen name="NIGHT TEETH" component={movieOneScreen} />
+      <Tab.Screen name="FREE GUY" component={movieTwoScreen} />
+      <Tab.Screen name="OLD" component={movieThreeScreen} />
+    </Tab.Navigator>
+  );
+}
+*/
 export default App;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'cyan',
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: "row",
@@ -466,7 +500,17 @@ const styles = StyleSheet.create({
   }, 
   button :{
     width: 20,
-    backgroundColor: "yellow"
-  }
+    backgroundColor: "yellow",
+    color: "yellow",
+  },
+  titleLogo :{
+    width: 400,
+    height: 50,
+    backgroundColor: "#C4C4C4",
+    color: "#F8C460",
+    fontSize: 40,
+    paddingLeft: 20,
+    borderColor: "black",
+  },
 });
 
