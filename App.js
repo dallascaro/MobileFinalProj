@@ -450,20 +450,19 @@ function App() {
   </NavigationContainer>
   );
 }
+
 /*
 function App() {
   return (
+    <NavigationContainer>
     <Tab.Navigator initialRouteName="Home">
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Create" component={CreateScreen} />
       <Tab.Screen name="Login" component={LoginScreen} />
       <Tab.Screen name="Account" component={accountScreen} />
       <Tab.Screen name="Search" component={SearchScreen} />
-      <Tab.Screen name="DUNE" component={movieScreen} />
-      <Tab.Screen name="NIGHT TEETH" component={movieOneScreen} />
-      <Tab.Screen name="FREE GUY" component={movieTwoScreen} />
-      <Tab.Screen name="OLD" component={movieThreeScreen} />
     </Tab.Navigator>
+    </NavigationContainer>
   );
 }
 */
