@@ -23,16 +23,18 @@ function HomeScreen({navigation}){
     <View backgroundColor = "C4C4C4">
 
     <View styles =  {styles.container} backgroundColor = "C4C4C4">
+    <Image style={styles.accountLogo} source={require('./assets/MoviePosters/Cinema.png')}/>
+    <Text style = {styles.titleLogo}>Flicknatic</Text>
       <Text>Welcome to the Home Screen</Text>
       <Text>Please either Login into you account or create an account </Text>
     <View>
 
-    <TextInput 
+    <TextInput styles =  {styles.textInput}
       placeholder = "Username: "
       onChangeText = {onChangeText}
       value = {userName}>
       </TextInput>
-      <TextInput 
+      <TextInput styles =  {styles.textInput} 
       placeholder = "Password: "
       onChangeText = {onChangeText2}
       value = {password}>
@@ -207,14 +209,18 @@ function CreateScreen({navigation}){
 function accountScreen({navigation}){
   return(
     <View styles =  {styles.container}>
-      <Text>Welcome to your Account</Text>
+      <View style={styles.accountWelcome}>
+      <Image style={styles.accountLogo} source={require('./assets/MoviePosters/Cinema.png')}/>
+      <Image style={styles.accountChar} source={require('./assets/MoviePosters/characterIcon.png')}/>
+      <Text style={styles.accountText}>Welcome to your Account</Text>
+      </View>
 
-        <Button style={styles.button}
+        <Button style={styles.button, styles.accountButton}
           title = "Selecte Movies To Review"
           onPress={() =>  navigation.navigate('Search')}
           color='#F8C460'>
         </Button>
-        <Button style={styles.button}
+        <Button style={styles.button , styles.accountButton}
           title = "Movies Reviewed"
           onPress={() =>  navigation.navigate('Search')}
           color='#F8C460'>
@@ -222,7 +228,7 @@ function accountScreen({navigation}){
       <StatusBar style="auto" />
 
       <View> 
-        <Button style={styles.button}
+        <Button style={styles.button , styles.accountButton}
           title = "Go to home Screen"
           onPress={() => navigation.navigate('Home')}
           color='#F8C460'>
@@ -497,10 +503,19 @@ const styles = StyleSheet.create({
     padding: 50,
     paddingRight: 50
   }, 
+  textInput :{
+    fontSize: 20,
+    color: "black",
+    backgroundColor: "white",
+  },
   button :{
     width: 20,
     backgroundColor: "yellow",
     color: "yellow",
+  },
+  accountButton :{
+    paddingTop: 50,
+    paddingBottom: 20,
   },
   titleLogo :{
     width: 400,
@@ -511,5 +526,30 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     borderColor: "black",
   },
+  accountLogo :{
+    width: 85,
+    height: 63,
+    backgroundColor: "#C4C4C4",
+  },
+  accountWelcome :{
+    width: 400,
+    height: 250,
+    backgroundColor: "#C4C4C4",
+    paddingRight: 100,
+    borderColor: "black",
+  },
+  accountText :{
+    fontSize: 20,
+    color: "black",
+  },
+  accountChar :{
+    width: 60,
+    height: 60,
+    backgroundColor: "#C4C4C4",
+    paddingTop: 30,
+    paddingLeft: 100,
+    paddingBottom: 100,
+    alignItems: 'center',
+  }
 });
 
