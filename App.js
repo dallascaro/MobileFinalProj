@@ -23,20 +23,24 @@ function HomeScreen({navigation}){
     <View styles =  {styles.container}>
 
     <View style={styles.accountWelcome}>
-    <Image style={styles.accountLogo} source={require('./assets/MoviePosters/Cinema.png')}/>
+
+      <View style={styles.homeView}>
+      <Image style={styles.homeLogo} source={require('./assets/MoviePosters/Cinema.png')}/>
     <Text style = {styles.titleLogo}>Flicknatic</Text>
-      <Text>Please either Login into your account or create an account </Text>
+      <Text>Login or create an account </Text>
 
     <TextInput styles =  {styles.textInput}
       placeholder = "Username: "
       onChangeText = {onChangeText}
       value = {userName}>
       </TextInput>
+
       <TextInput styles =  {styles.textInput} 
       placeholder = "Password: "
       onChangeText = {onChangeText2}
       value = {password}>
       </TextInput>
+      </View>
 
       </View>
 
@@ -60,7 +64,12 @@ function HomeScreen({navigation}){
 function SearchScreen({navigation}){
   return(
     <View styles =  {styles.container}>
-      <Text style = {styles.titleLogo}>Flicknatic Movies</Text>
+
+      <View style = {styles.searchView}>
+      <Text style = {styles.titleLogo}>Flicknatic</Text>
+      <Image style={styles.searchAccountLogo} source={require('./assets/MoviePosters/Cinema.png')}/>
+      
+      </View>
       
       <View>
     
@@ -205,13 +214,23 @@ function CreateScreen({navigation}){
 
 function accountScreen({navigation}){
   return(
-    <View styles =  {styles.container}>
+    <View styles =  {styles.Accountcontainer}>
       <View style={styles.accountWelcome}>
-      <Image style={styles.accountLogo} source={require('./assets/MoviePosters/Cinema.png')}/>
-      <Image style={styles.accountChar} source={require('./assets/MoviePosters/characterIcon.png')}/>
-      <Text style={styles.accountText}>Welcome to your Account</Text>
+        <View styles = {styles.accountTop}>
+          <Image style={styles.menuAccountLogo} source={require('./assets/MoviePosters/menu.png')}/>
+          <Image style={styles.ticketAccountLogo} source={require('./assets/MoviePosters/Cinema.png')}/>
+        </View>
+        <Image style={styles.accountChar} source={require('./assets/MoviePosters/characterIcon.png')}/>
+        <Text style={styles.accountText}>Welcome to your Account</Text>
       </View>
-
+     
+      <View style={styles.accountMiddle}>
+        <View style={styles.accountLists}><Text>Favorites</Text></View>
+        <View style={styles.accountLists}><Text>Watch List</Text></View>
+        <View style={styles.accountLists}><Text>Movies Liked</Text></View>
+        <View style={styles.accountLists}><Text>TV Shows Liked</Text></View>
+        <View style={styles.accountLists}><Text>Favorites</Text></View>
+      </View>
         <Button style={styles.button, styles.accountButton}
           title = "Selecte Movies To Review"
           onPress={() =>  navigation.navigate('Search')}
@@ -231,6 +250,7 @@ function accountScreen({navigation}){
           color='#F8C460'>
         </Button>
       </View>
+
 
     </View>
 
@@ -453,7 +473,6 @@ function App() {
   </NavigationContainer>
   );
 }
-
 /*
 function App() {
   return (
@@ -478,6 +497,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: "row",
+    flexWrap: "wrap",
+  },
+  Accountcontainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
     flexWrap: "wrap",
   },
   ScrollView:{
@@ -514,30 +539,56 @@ const styles = StyleSheet.create({
     paddingTop: 50,
     paddingBottom: 20,
   },
-  titleLogo :{
-    width: 400,
-    height: 50,
-    backgroundColor: "#C4C4C4",
-    color: "#F8C460",
-    fontSize: 40,
-    paddingLeft: 20,
-    borderColor: "black",
+  homeView:{
+    paddingLeft: 110
   },
-  accountLogo :{
+  titleLogo :{
+    height: 50,
+    color: "#F8C460",
+    fontSize: 35,
+    borderRadius: 20,
+    marginLeft: 20,
+    textShadowRadius: 1,
+    textShadowColor: "black",
+    //textShadowOffset: height: 10 width: 10,
+  },
+  homeLogo :{
     width: 85,
     height: 63,
+  },
+  menuAccountLogo :{
+    width: 40,
+    margin: 10,
+  },
+  ticketAccountLogo :{
+    marginLeft:100,
+  },
+  accountTop : {
+    // this doesnt do anything
+    //flexDirection:"row",
+    //flexWrap: "wrap"
+  },
+  searchView :{
+    flexDirection: "row",
     backgroundColor: "#C4C4C4",
+    borderRadius: 20
+  },
+  searchAccountLogo :{
+    marginLeft: 25,
+    padding: 10,
+    marginLeft: 100
   },
   accountWelcome :{
-    width: 400,
-    height: 250,
     backgroundColor: "#C4C4C4",
     paddingRight: 100,
     borderColor: "black",
+    flexDirection: "column",
   },
   accountText :{
     fontSize: 20,
     color: "black",
+
+
   },
   accountChar :{
     width: 60,
