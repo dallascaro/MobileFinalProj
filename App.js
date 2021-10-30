@@ -20,14 +20,12 @@ function HomeScreen({navigation}){
   
   
   return(
-    <View backgroundColor = "C4C4C4">
+    <View styles =  {styles.container}>
 
-    <View styles =  {styles.container} backgroundColor = "C4C4C4">
+    <View style={styles.accountWelcome}>
     <Image style={styles.accountLogo} source={require('./assets/MoviePosters/Cinema.png')}/>
     <Text style = {styles.titleLogo}>Flicknatic</Text>
-      <Text>Welcome to the Home Screen</Text>
-      <Text>Please either Login into you account or create an account </Text>
-    <View>
+      <Text>Please either Login into your account or create an account </Text>
 
     <TextInput styles =  {styles.textInput}
       placeholder = "Username: "
@@ -40,6 +38,8 @@ function HomeScreen({navigation}){
       value = {password}>
       </TextInput>
 
+      </View>
+
       <Button style={styles.button}
         title = "Sign Up!"
         onPress={() => navigation.navigate('Create')}
@@ -51,11 +51,8 @@ function HomeScreen({navigation}){
         color='#F8C460'>
         </Button>
 
-    </View>
-      
-      <StatusBar style="auto" />
-     
-    </View>
+        <StatusBar style="auto" />
+
     </View>
   );
 }
@@ -477,7 +474,7 @@ export default App;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'cyan',
+    backgroundColor: 'gray',
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: "row",
