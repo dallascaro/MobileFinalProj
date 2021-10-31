@@ -216,9 +216,13 @@ function accountScreen({navigation}){
   return(
     <View styles =  {styles.Accountcontainer}>
       <View style={styles.accountWelcome}>
-        <View styles = {styles.accountTop}>
+        <View style = {styles.accountTop}>
+          <Text style = {styles.topLine}>
           <Image style={styles.menuAccountLogo} source={require('./assets/MoviePosters/menu.png')}/>
+          <View style = {styles.ticket}>
           <Image style={styles.ticketAccountLogo} source={require('./assets/MoviePosters/Cinema.png')}/>
+          </View>
+          </Text>
         </View>
         <Image style={styles.accountChar} source={require('./assets/MoviePosters/characterIcon.png')}/>
         <Text style={styles.accountText}>Welcome to your Account</Text>
@@ -561,12 +565,18 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   ticketAccountLogo :{
-    marginLeft:100,
+    height: 40,
+  },
+  ticket : {
+      paddingLeft: 250
+  },
+  topLine : {
+    height: 100
   },
   accountTop : {
-    // this doesnt do anything
-    //flexDirection:"row",
-    //flexWrap: "wrap"
+    padding: 10,
+    paddingBottom: 10,
+    width: 400,
   },
   searchView :{
     flexDirection: "row",
@@ -588,13 +598,11 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: "black",
 
-
   },
   accountChar :{
     width: 60,
     height: 60,
     backgroundColor: "#C4C4C4",
-    paddingTop: 30,
     paddingLeft: 100,
     paddingBottom: 100,
     alignItems: 'center',
