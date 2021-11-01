@@ -229,11 +229,26 @@ function accountScreen({navigation}){
       </View>
      
       <View style={styles.accountMiddle}>
-        <View style={styles.accountLists}><Text>Favorites</Text></View>
-        <View style={styles.accountLists}><Text>Watch List</Text></View>
-        <View style={styles.accountLists}><Text>Movies Liked</Text></View>
-        <View style={styles.accountLists}><Text>TV Shows Liked</Text></View>
-        <View style={styles.accountLists}><Text>Favorites</Text></View>
+        <View 
+          style={styles.accountLists}>
+          <Image source={require('./assets/MoviePosters/favorites.png')}/>
+          <Text style={styles.accountIcons}>Favorites -</Text>
+        </View>
+        <View 
+          style={styles.accountLists}> 
+          <Image source={require('./assets/MoviePosters/vr.png')}/>
+          <Text style={styles.accountIcons}>Watch List -</Text>
+        </View>
+        <View 
+          style={styles.accountLists}>
+            <Image source={require('./assets/MoviePosters/like.png')}/>
+            <Text style={styles.accountIcons}>Movies Liked -</Text>
+        </View>
+        <View 
+        style={styles.accountLists}>
+          <Image source={require('./assets/MoviePosters/goku.png')}/> 
+          <Text style={styles.accountIcons}>TV Shows Liked -</Text>
+          </View>
       </View>
         <Button style={styles.button, styles.accountButton}
           title = "Selecte Movies To Review"
@@ -532,7 +547,7 @@ const styles = StyleSheet.create({
   textInput :{
     fontSize: 20,
     color: "black",
-    backgroundColor: "white",
+    backgroundColor: "white"
   },
   button :{
     width: 20,
@@ -559,6 +574,7 @@ const styles = StyleSheet.create({
   homeLogo :{
     width: 85,
     height: 63,
+    marginLeft: 45
   },
   menuAccountLogo :{
     width: 40,
@@ -577,6 +593,11 @@ const styles = StyleSheet.create({
     padding: 10,
     paddingBottom: 10,
     width: 400,
+  },
+  accountIcons :{
+   marginLeft: 60,
+   paddingBottom: 10,
+   fontSize: 20
   },
   searchView :{
     flexDirection: "row",
@@ -604,6 +625,7 @@ const styles = StyleSheet.create({
     height: 60,
     backgroundColor: "#C4C4C4",
     paddingLeft: 100,
+    marginLeft: 150,
     paddingBottom: 100,
     alignItems: 'center',
   }
