@@ -48,10 +48,7 @@ function HomeScreen({navigation}){
       color = "gray">
       </TextInput>
     </View>
-    
-      </View>
-
-      <Button style={styles.homeButton}
+    <Button style={styles.homeButton}
         title = "Sign Up!"
         onPress={() => navigation.navigate('Create')}
         color='#F8C460'>
@@ -61,6 +58,9 @@ function HomeScreen({navigation}){
         onPress={() => navigation.navigate('Account')}
         color='#F8C460'>
         </Button>
+      </View>
+
+     
 
 
       </View>
