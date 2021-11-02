@@ -48,17 +48,24 @@ function HomeScreen({navigation}){
       color = "gray">
       </TextInput>
     </View>
-    <Button style={styles.homeButton}
-        title = "Sign Up!"
-        onPress={() => navigation.navigate('Create')}
-        color='#F8C460'>
-        </Button>
-        <Button style={styles.homeButton}
-        title = "Login In"
-        onPress={() => navigation.navigate('Account')}
-        color='#F8C460'>
-        </Button>
+
+    <View style = {styles.buttonView}>
+      <View style = {styles.buttonView}>
+          <Button style={styles.leftButtonSpacing}
+          title = "Sign Up!"
+          onPress={() => navigation.navigate('Create')}
+          color='#F8C460'>
+          </Button>
       </View>
+      <View style = {styles.buttonView}>
+          <Button style={styles.rightButtonSpacing}
+          title = "Login In"
+          onPress={() => navigation.navigate('Account')}
+          color='#F8C460'>
+          </Button>
+      </View>
+    </View>
+</View>
 
      
 
@@ -544,7 +551,7 @@ const styles = StyleSheet.create({
     backgroundColor: "yellow",
     color: "yellow",
    paddingTop: 100,
-   marginTop: 20
+   marginTop: 20,
   },
   accountButton :{
     paddingTop: 50,
@@ -609,6 +616,17 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     backgroundColor: "#C4C4C4",
     borderRadius: 20
+  },
+  buttonView : {
+    flexDirection: 'row',
+    padding: 10,
+
+  },
+  leftButtonSpacing :{
+
+  },
+  rightButtonSpacing :{
+
   },
   searchAccountLogo :{
     marginLeft: 25,
