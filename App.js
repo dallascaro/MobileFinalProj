@@ -345,10 +345,12 @@ function movieScreen(){
       </TextInput>
 
       <Button style={styles.button}
+      
         title = "Enter Review!"
         onPress={() => navigation.navigate('Create')}
         color='#F8C460'>
         </Button>
+
       </View>
     </View>
   );
