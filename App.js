@@ -8,6 +8,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import movieData from './movieData.json';
+import { auth } from './fireBase';
 
 
 const Stack = createNativeStackNavigator();
@@ -17,6 +18,21 @@ function HomeScreen({navigation}){
 
   const{userName, onChangeText} = React.useState("Placeholder");
   const{password, onChangeText2} = React.useState("Placeholder");
+
+  //users to be stored
+  const[email, setEmail] = React.useState("Email");
+  const[password2, setPassword] = React.useState("Password");
+
+  // metehod for saving user email into authentication
+  
+  const placeOrder = () => {
+    auth.signInWithEmailAndPassword(email.trim(), password2) 
+    .then(userCredentials =>{
+      const user = userCredentials.user;
+      console.log(user.email);
+    })
+    .catch(error => alert(error.message))
+  }
   
   
   return(
@@ -36,8 +52,8 @@ function HomeScreen({navigation}){
             <View style={styles.textSpace}>
               <TextInput styles =  {styles.textInput}
                 placeholder = "Username: "
-                onChangeText = {onChangeText}
-                value = {userName}
+                onChangeText = {setEmail}
+                value = {email}
                 backgroundColor = "white"
                 color = "gray">
                 </TextInput>
@@ -45,10 +61,12 @@ function HomeScreen({navigation}){
             <View style={styles.textSpace}>
               <TextInput styles =  {styles.textInput} 
               placeholder = "Password: "
-              onChangeText = {onChangeText2}
-              value = {password}
+              onChangeText = {setPassword}
+              value = {password2}
               backgroundColor = "white"
-              color = "gray">
+              color = "gray"
+              secureTextEntry>
+              
               </TextInput>
             </View>
           </View>
@@ -57,7 +75,7 @@ function HomeScreen({navigation}){
               <View style = {styles.buttonView}>
                   <Button style={styles.leftButtonSpacing}
                   title = "Sign Up!"
-                  onPress={() => navigation.navigate('Create')}
+                  onPress={placeOrder}
                   color='#F8C460'>
                   </Button>
               </View>
@@ -498,6 +516,24 @@ function movieTwoScreen(){
 
 function movieThreeScreen(){
   const showAlert = () => 
+    Alert.alert(
+      "Submitted Review",
+      "Thanks for submitting review",
+    
+    [
+      {
+        text: "Cancel",
+        onPress: () => Alert.alert("Canceled Press"),
+        style: "cancel",
+
+      },
+    ],
+      {
+        cancelable: true,
+        onDismiss: () =>
+          Alert.alert("Thanks for leaving the review please check out other movies."),
+      },
+    );showAlert = () => 
     Alert.alert(
       "Submitted Review",
       "Thanks for submitting review",
