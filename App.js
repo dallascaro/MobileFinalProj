@@ -264,6 +264,7 @@ function SearchScreen({navigation}){
 
 
 function accountScreen({navigation}){
+  
   return(
     <View styles =  {styles.Accountcontainer}>
       <View style={styles.accountWelcome}>
@@ -278,19 +279,27 @@ function accountScreen({navigation}){
       <View style={styles.accountMiddle}>
         <View style={styles.accountLists}>
           <Image  style={styles.middleIcons} source={require('./assets/MoviePosters/favorites.png')}/>
+          
           <Text style={styles.middleAccountText}>Favorites &gt;</Text>
+
         </View>
         <View style={styles.accountLists}> 
           <Image  style={styles.middleIcons} source={require('./assets/MoviePosters/virtualreality.png')}/>
+
           <Text style={styles.middleAccountText}>Watch List &gt;</Text>
+
         </View>
         <View style={styles.accountLists}>
             <Image  style={styles.middleIcons} source={require('./assets/MoviePosters/like.png')}/>
+
             <Text style={styles.middleAccountText}>Movies Liked &gt;</Text>
+
         </View>
         <View style={styles.accountLists}>
-          <Image  style={styles.middleIcons}source={require('./assets/MoviePosters/goku.png')}/> 
+          <Image  style={styles.middleIcons}source={require('./assets/MoviePosters/goku.png')}/>
+
           <Text style={styles.middleAccountText}>TV Shows Liked &gt;</Text>
+
           </View>
       </View>
         <Button style={styles.button, styles.accountButton}
@@ -355,17 +364,28 @@ function movieScreen(){
       <Text>DUNE </Text>
       <Text>Release Date: 2021</Text>
       <Text>Genre: Sci-fi / Adventure  Runtime: 2HR 35 Min</Text>
-      <TextInput 
-      placeholder = "Username: "
-      onChangeText = {onChangeText}
-      value = {userName}>
-      </TextInput>
-      <TextInput 
-      placeholder = "Review: "
-      onChangeText = {onChangeText3}
-      value = {review}
-      editable maxLength = {100}>
-      </TextInput>
+
+      <View style={styles.textSpace}>
+        <TextInput styles =  {styles.textInputMovie}
+          placeholder = "Username: "
+          onChangeText = {onChangeText}
+          value = {userName}
+          backgroundColor = "white"
+              color = "gray">
+        </TextInput>
+        </View>
+        <View style={styles.textSpace}>
+        <TextInput styles =  {styles.textInputMovie}
+          placeholder = "Review: "
+          onChangeText = {onChangeText3}
+          value = {review}
+          editable maxLength = {100}
+          backgroundColor = "white"
+              color = "gray">
+              
+        </TextInput>
+      </View>
+      
 
       <Button style={styles.button}
       
@@ -414,17 +434,25 @@ function movieOneScreen(){
       <Text>Release Date: 2021  </Text>
       <Text>Genre: Action / Crime / Drama  Runtime: 1HR 47 Min</Text>
 
-      <TextInput 
-      placeholder = "Username: "
-      onChangeText = {onChangeText}
-      value = {userName}>
-      </TextInput>
-      <TextInput 
-      placeholder = "Review: "
-      onChangeText = {onChangeText3}
-      value = {review}
-      editable maxLength = {100}>
-      </TextInput>
+      <View style={styles.textSpace}>
+        <TextInput styles =  {styles.textInputMovie}
+          placeholder = "Username: "
+          onChangeText = {onChangeText}
+          value = {userName}
+          backgroundColor = "white"
+              color = "gray">
+        </TextInput>
+        </View>
+        <View style={styles.textSpace}>
+        <TextInput styles =  {styles.textInputMovie}
+          placeholder = "Review: "
+          onChangeText = {onChangeText3}
+          value = {review}
+          editable maxLength = {100}
+          backgroundColor = "white"
+              color = "gray">
+        </TextInput>
+      </View>
 
       <Button style={styles.button}
       
@@ -470,17 +498,25 @@ function movieTwoScreen(){
       <Text>Release Date: 2021  </Text>
       <Text>Genre: Action / Adventure  Runtime: 1HR 55 Min</Text>
 
-      <TextInput 
-      placeholder = "Username: "
-      onChangeText = {onChangeText}
-      value = {userName}>
-      </TextInput>
-      <TextInput 
-      placeholder = "Review: "
-      onChangeText = {onChangeText3}
-      value = {review}
-      editable maxLength = {100}>
-      </TextInput>
+      <View style={styles.textSpace}>
+        <TextInput styles =  {styles.textInputMovie}
+          placeholder = "Username: "
+          onChangeText = {onChangeText}
+          value = {userName}
+          backgroundColor = "white"
+              color = "gray">
+        </TextInput>
+        </View>
+        <View style={styles.textSpace}>
+        <TextInput styles =  {styles.textInputMovie}
+          placeholder = "Review: "
+          onChangeText = {onChangeText3}
+          value = {review}
+          editable maxLength = {100}
+          backgroundColor = "white"
+              color = "gray">
+        </TextInput>
+      </View>
 
       <Button style={styles.button}
       
@@ -496,42 +532,24 @@ function movieTwoScreen(){
 
 function movieThreeScreen(){
   const showAlert = () => 
-    Alert.alert(
-      "Submitted Review",
-      "Thanks for submitting review",
-    
-    [
-      {
-        text: "Cancel",
-        onPress: () => Alert.alert("Canceled Press"),
-        style: "cancel",
+  Alert.alert(
+    "Submitted Review",
+    "Thanks for submitting review",
+  
+  [
+    {
+      text: "Cancel",
+      onPress: () => Alert.alert("Canceled Press"),
+      style: "cancel",
 
-      },
-    ],
-      {
-        cancelable: true,
-        onDismiss: () =>
-          Alert.alert("Thanks for leaving the review please check out other movies."),
-      },
-    );showAlert = () => 
-    Alert.alert(
-      "Submitted Review",
-      "Thanks for submitting review",
-    
-    [
-      {
-        text: "Cancel",
-        onPress: () => Alert.alert("Canceled Press"),
-        style: "cancel",
-
-      },
-    ],
-      {
-        cancelable: true,
-        onDismiss: () =>
-          Alert.alert("Thanks for leaving the review please check out other movies."),
-      },
-    );
+    },
+  ],
+    {
+      cancelable: true,
+      onDismiss: () =>
+        Alert.alert("Thanks for leaving the review please check out other movies."),
+    },
+  );
   const{userName, onChangeText} = React.useState("Placeholder");
   const{password, onChangeText2} = React.useState("Placeholder");
   const{review, onChangeText3} = React.useState("Placeholder");
@@ -544,17 +562,25 @@ function movieThreeScreen(){
       <Text>Release Date: 2021 </Text>
       <Text>Genre: Action / Adventure  Runtime: 1HR 55 Min</Text>
 
-      <TextInput 
-      placeholder = "Username: "
-      onChangeText = {onChangeText}
-      value = {userName}>
-      </TextInput>
-      <TextInput 
-      placeholder = "Reivew: "
-      onChangeText = {onChangeText3}
-      value = {review}
-      editable maxLength = {100}>
-      </TextInput>
+      <View style={styles.textSpace}>
+        <TextInput styles =  {styles.textInputMovie}
+          placeholder = "Username: "
+          onChangeText = {onChangeText}
+          value = {userName}
+          backgroundColor = "white"
+              color = "gray">
+        </TextInput>
+        </View>
+        <View style={styles.textSpace}>
+        <TextInput styles =  {styles.textInputMovie}
+          placeholder = "Review: "
+          onChangeText = {onChangeText3}
+          value = {review}
+          editable maxLength = {100}
+          backgroundColor = "white"
+              color = "gray">
+        </TextInput>
+      </View>
 
       <Button style={styles.button}
       
@@ -649,6 +675,14 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     marginBottom: 10
   },
+  textInputMovie :{
+    fontSize: 20,
+    color: "black",
+    backgroundColor: "white",
+    marginBottom: 20,
+    paddingBottom: 10
+  },
+
   textSpace :{
     paddingBottom: 10,
     paddingTop: 10
@@ -784,6 +818,6 @@ const styles = StyleSheet.create({
     marginLeft: 150,
     paddingBottom: 100,
     alignItems: 'center',
-  }
+  },
 });
 
