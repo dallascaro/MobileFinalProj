@@ -1,5 +1,8 @@
 // Import the functions you need from the SDKs you need
-//import { initializeApp } from "firebase/app";
+import { initializeApp } from 'firebase/app';
+import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+import { doc, setDoc } from "firebase/firestore"; 
+
 // Import the functions you need from the SDKs you need
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
@@ -26,5 +29,32 @@ if (firebase.apps.length === 0){
 }
 
 const auth = firebase.auth()
+
+const user = {
+  email: 'email@email.com',
+  movie: 'Dune',
+  review: 'movie sucks'
+};
+
+// Add a new document in collection "cities" with ID 'LA'
+//const Users = await db.collection('Users').doc('XIKEhT3iCU6HdSIGWzJZ').set(user);
+//console.log(Users);
+
+
+// Get a list of users from your database
+//async function getUsers(db) {
+
+//  const usersCol = collection(db, 'Users');
+//  const usersSnapshot = await getDocs(usersCol);
+//  const usersList = usersSnapshot.docs.map(doc => doc.data());
+
+//  const users = await firestore().collection('Users').get();
+//  const user = await firestore().collection('Users').doc('ABC').get();
+
+
+//  return usersList;
+//}
+
+
 
 export { auth };

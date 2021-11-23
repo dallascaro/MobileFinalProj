@@ -75,7 +75,9 @@ function HomeScreen({navigation}){
               <View style = {styles.buttonView}>
                   <Button style={styles.leftButtonSpacing}
                   title = "Sign Up!"
-                  onPress={placeOrder}
+                  onPress={
+                    () => {placeOrder; navigation.navigate('Account')}
+                  }
                   color='#F8C460'>
                   </Button>
               </View>
@@ -102,16 +104,22 @@ function SearchScreen({navigation}){
   return(
     <View styles =  {styles.container}>
 
-      <View style = {styles.searchView}>
-      <Text style = {styles.titleLogo}>Flicknatic</Text>
-      <Image style={styles.searchAccountLogo} source={require('./assets/MoviePosters/Cinema.png')}/>
+
+
+
+        <View style = {styles.searchView}>
+          <Text style = {styles.titleLogo}>Flicknatic</Text>
+          <Image style={styles.searchAccountLogo} source={require('./assets/MoviePosters/Cinema.png')}/>
+        </View>
       
-      </View>
-      
-      <View>
+      <View style = {styles.searchMiddle}>
+
+      <ScrollView style = {styles.searchScreenScrollView}> 
     
        <View>
+       <Text style = {styles.searchScreenScrollText}>New Releases</Text>
         <ScrollView horizontal = {true}> 
+
 
         <TouchableHighlight onPress={() =>  navigation.navigate('DUNE')}>
         <Image style={styles.tinyLogo ,styles.row, styles.text} source={require('./assets/MoviePosters/Movie1.png')}/>
@@ -141,7 +149,9 @@ function SearchScreen({navigation}){
         </View>
 
         <View>
+        <Text style = {styles.searchScreenScrollText}>Thriller Movies</Text>
         <ScrollView horizontal = {true}> 
+
         <TouchableHighlight onPress={() =>  navigation.navigate('EVERY LAST ONE OF THEM')}>
         <Image style={styles.tinyLogo ,styles.row, styles.text} source={require('./assets/MoviePosters/Movie5.png')}/>
           </TouchableHighlight>
@@ -170,7 +180,9 @@ function SearchScreen({navigation}){
         </View>
 
         <View>
+        <Text style = {styles.searchScreenScrollText}>Coming Soon</Text>
         <ScrollView horizontal = {true}> 
+
         <TouchableHighlight onPress={() =>  navigation.navigate('SPIDERMAN NO WAY HOME')}>
         <Image style={styles.tinyLogo ,styles.row, styles.text} source={require('./assets/MoviePosters/Movie9.png')}/>
           </TouchableHighlight>
@@ -198,50 +210,52 @@ function SearchScreen({navigation}){
         </ScrollView>
         </View>
 
+        <View>
+        <Text style = {styles.searchScreenScrollText}>Action Movies</Text>
+        <ScrollView horizontal = {true}> 
+
+        <TouchableHighlight onPress={() =>  navigation.navigate('DUNE')}>
+        <Image style={styles.tinyLogo ,styles.row, styles.text} source={require('./assets/MoviePosters/Movie1.png')}/>
+        </TouchableHighlight>
+
+        <TouchableHighlight onPress={() =>  navigation.navigate('NIGHT TEETH')}>
+            <Image style={styles.tinyLogo ,styles.row, styles.text} source={require('./assets/MoviePosters/Movie2.png')}/>
+            </TouchableHighlight>
+
+            <TouchableHighlight onPress={() =>  navigation.navigate('FREE GUY')}>
+            <Image style={styles.tinyLogo ,styles.row, styles.text} source={require('./assets/MoviePosters/Movie3.png')}/>
+            </TouchableHighlight>
+
+            <TouchableHighlight onPress={() =>  navigation.navigate('OLD')}>
+            <Image style={styles.tinyLogo ,styles.row, styles.text} source={require('./assets/MoviePosters/Movie4.png')}/>
+            </TouchableHighlight>
+
+            <TouchableHighlight onPress={() =>  navigation.navigate('Movies')}>
+          <Image style={styles.tinyLogo ,styles.row, styles.text} source={require('./assets/MoviePosters/Movie11.png')}/>
+          </TouchableHighlight>
+
+          <TouchableHighlight onPress={() =>  navigation.navigate('KINGS MAN')}>
+            <Image style={styles.tinyLogo ,styles.row, styles.text} source={require('./assets/MoviePosters/Movie12.png')}/>
+            </TouchableHighlight>
+
+        </ScrollView>
+        </View>
+
+        </ScrollView>
        </View>
+
       <StatusBar style="auto" />
 
-      <View> 
-        <Button style={styles.button}
-        title = "Go to home Screen"
-        onPress={() => navigation.navigate('Home')}
-        color='#F8C460'>
-        </Button>
-      </View>
+        <View style = {styles.searchBottom}>
+          <View style = {styles.searchButton}> 
+            <Button style={styles.button}
+            title = "Go to home Screen"
+            onPress={() => navigation.navigate('Home')}
+            color='#C4C4C4'>
+            </Button>
+          </View>
+        </View>
 
-    </View>
-
-  );
-
-}
-
-function CreateScreen({navigation}){
-  const{userName, onChangeText} = React.useState("Placeholder");
-  const{password, onChangeText2} = React.useState("Placeholder");
-  return(
-    <View styles =  {styles.container}>
-      <Text>Please Create an Account using a username and password!</Text>
-
-      <SafeAreaView>
-      <TextInput 
-        placeholder = "Username: "
-        onChangeText = {onChangeText}
-        value = {userName}>
-      </TextInput>
-      <TextInput 
-        placeholder = "Password: "
-        onChangeText = {onChangeText2}
-        value = {password}>
-      </TextInput>
-       </SafeAreaView>
-
-       <Button style={styles.button}
-          title = "Create Account"
-          onPress={() =>  navigation.navigate('Account')}
-          color='#F8C460'>
-        </Button>
-      <StatusBar style="auto" />
-      
     </View>
 
   );
@@ -280,22 +294,20 @@ function accountScreen({navigation}){
           </View>
       </View>
         <Button style={styles.button, styles.accountButton}
-          title = "Selecte Movies To Review"
+          title = "Select Movies To Review"
           onPress={() =>  navigation.navigate('Search')}
-          color='#F8C460'>
+          color='#C4C4C4'
+          >
         </Button>
-        <Button style={styles.button , styles.accountButton}
-          title = "Movies Reviewed"
-          onPress={() =>  navigation.navigate('Search')}
-          color='#F8C460'>
-        </Button>
+        
       <StatusBar style="auto" />
 
       <View> 
         <Button style={styles.button , styles.accountButton}
           title = "Go to home Screen"
           onPress={() => navigation.navigate('Home')}
-          color='#F8C460'>
+          color='#C4C4C4'
+          >
         </Button>
       </View>
 
@@ -306,38 +318,6 @@ function accountScreen({navigation}){
 
 }
 
-function LoginScreen({navigation}){
-  const{userName, onChangeText} = React.useState("Placeholder");
-  const{password, onChangeText2} = React.useState("Placeholder");
-  return(
-    <View styles =  {styles.container}>
-      <Text>Please Login to your account</Text>
-
-      <SafeAreaView>
-      <TextInput 
-        placeholder = "Username: "
-        onChangeText = {onChangeText}
-        value = {userName}>
-      </TextInput>
-      <TextInput 
-        placeholder = "Password: "
-        onChangeText = {onChangeText2}
-        value = {password}>
-      </TextInput>
-       </SafeAreaView>
-
-       <Button style={styles.button}
-          title = "Login to Account"
-          onPress={() =>  navigation.navigate('Login')}
-          color='#F8C460'>
-        </Button>
-      <StatusBar style="auto" />
-      
-    </View>
-
-  );
-
-}
 
 function movieScreen(){
 
@@ -593,8 +573,6 @@ function App() {
     <NavigationContainer>
     <Stack.Navigator initialRouteName="Home">
       <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="Create" component={CreateScreen} />
-      <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="Account" component={accountScreen} />
       <Stack.Screen name="Search" component={SearchScreen} />
       <Stack.Screen name="DUNE" component={movieScreen} />
@@ -614,8 +592,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'gray',
     alignItems: 'center',
     justifyContent: 'center',
-    flexDirection: "row",
-    flexWrap: "wrap",
+    flexDirection: "column",
   },
   Accountcontainer: {
     flex: 1,
@@ -623,8 +600,31 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     flexWrap: "wrap",
   },
+  accountMiddle : {
+    marginBottom: 210
+  },
   ScrollView:{
     paddingTop: '10px',
+  },
+  searchScreenScrollView : {
+      height: 550
+  },
+  searchScreenScrollText :{
+    marginBottom: 20,
+    fontSize: 20,
+  },
+  searchView :{
+    flexDirection: "row",
+    backgroundColor: "#C4C4C4",
+    borderBottomRightRadius: 20,
+    borderBottomLeftRadius: 20
+    //flex: 1
+  },
+  searchMiddle : {
+    //flex: 7,
+  },
+  searchBottom : {
+    //flex: 1,
   },
   row: {
     flexDirection: "row",
@@ -654,12 +654,9 @@ const styles = StyleSheet.create({
     paddingTop: 10
   },
   button :{
-    backgroundColor: "yellow",
-    color: "yellow",
+    
   },
   homeButton :{
-    backgroundColor: "yellow",
-    color: "yellow",
    paddingTop: 100,
    marginTop: 20,
   },
@@ -741,11 +738,7 @@ const styles = StyleSheet.create({
    paddingBottom: 10,
    fontSize: 20,
   },
-  searchView :{
-    flexDirection: "row",
-    backgroundColor: "#C4C4C4",
-    borderRadius: 20
-  },
+  
   buttonView : {
     flexDirection: 'row',
     padding: 10,
