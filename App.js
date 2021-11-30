@@ -8,11 +8,18 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import movieData from './movieData.json';
+//import reviews from 'C:\Users\dalla\OneDrive\Desktop\JavaScript\MobileFinalProj\node_modules\imdb-data\tests\reviews.test.js';
+//import reviews from './node_modules/imdb-data/tests/reviews.test.js';
 import { auth } from './fireBase';
 
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
+
+// IMDB movie data
+//reviews = imdb-data;
+//console.log(reviews.length);// 50000
+//console.log(reviews[0]);
 
 function HomeScreen({navigation}){
 
@@ -75,9 +82,7 @@ function HomeScreen({navigation}){
               <View style = {styles.buttonView}>
                   <Button style={styles.leftButtonSpacing}
                   title = "Sign Up!"
-                  onPress={
-                    () => {placeOrder; navigation.navigate('Account')}
-                  }
+                  onPress={placeOrder}
                   color='#F8C460'>
                   </Button>
               </View>
